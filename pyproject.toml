@@ -21,3 +21,6 @@ dependencies = [
     "unidic-lite==1.0.8"
 ]
 requires-python = ">=3.9"
+
+[tool.mypy]
+ignore_missing_imports = true

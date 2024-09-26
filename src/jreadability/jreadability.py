@@ -1,13 +1,15 @@
 import fugashi
+from typing import List
+from fugashi.fugashi import UnidicNode
 
-def compute_readability(text):
+def compute_readability(text: str) -> float:
 
     # initialize mecab parser
     tagger = fugashi.Tagger()
 
     doc = tagger(text)
 
-    def split_japanese_sentences(doc):
+    def split_japanese_sentences(doc: List[UnidicNode]) -> List[List[UnidicNode]]:
         
         sentences = []
         current_sentence = []
