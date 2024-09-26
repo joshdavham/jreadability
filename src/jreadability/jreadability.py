@@ -1,8 +1,24 @@
+"""
+jreadability.jreadability
+
+This module defines the `compute_readability` function.
+There are no other public functions, classes or variables.
+"""
+
 import fugashi
 from typing import List
 from fugashi.fugashi import UnidicNode
 
 def compute_readability(text: str) -> float:
+    """
+    Computes the readability of a Japanese text.
+
+    Args:
+        text (str): The text to be scored.
+
+    Returns:
+        float: A float representing the readability score of the text.
+    """
 
     # initialize mecab parser
     tagger = fugashi.Tagger()
@@ -10,6 +26,9 @@ def compute_readability(text: str) -> float:
     doc = tagger(text)
 
     def split_japanese_sentences(doc: List[UnidicNode]) -> List[List[UnidicNode]]:
+        """
+        Helper function that breaks the parsed text into lists of sentences.
+        """
         
         sentences = []
         current_sentence = []
