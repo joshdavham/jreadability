@@ -53,11 +53,11 @@ Note that this readability calculator is specifically for <u>non-native speakers
 
 $$
 \begin{align*}
-\textrm{readability} &\ =  \{\textrm{mean number of words per sentence}\} \cdot -0.056 \\
-&\ + \{\textrm{proportion of kango}\} \cdot -0.126 \\
-&\ + \{\textrm{proportion of wago}\} \cdot -0.042 \\
-&\ + \{\textrm{proportion of verbs}\} \cdot -0.145 \\
-&\ + \{\textrm{proportion of auxiliary verbs}\} \cdot -0.044 \\
+\textrm{readability}~= &\ (\textrm{mean number of words per sentence}) \cdot -0.056 \\
+&\ + (\textrm{proportion of kango}) \cdot -0.126 \\
+&\ + (\textrm{proportion of wago}) \cdot -0.042 \\
+&\ + (\textrm{proportion of verbs}) \cdot -0.145 \\
+&\ + (\textrm{proportion of auxiliary verbs}) \cdot -0.044 \\
 &\ + 11.724
 \end{align*}
 $$
