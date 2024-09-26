@@ -1,9 +1,10 @@
 <div align="center">
     <img src="logo.svg" height="75">
 </div>
+<br />
 
 <div align="center">
-    Text readability calculator for Japanese learners 🇯🇵
+    <i>Text readability calculator for Japanese learners 🇯🇵</i>
 </div>
 
 <br />
@@ -52,7 +53,7 @@ Note that this readability calculator is specifically for <u>non-native speakers
 
 $$
 \begin{align*}
-\textrm{readability} = &\ \{\textrm{mean number of words per sentence}\} \cdot -0.056 \\
+\textrm{readability} &\ =  \{\textrm{mean number of words per sentence}\} \cdot -0.056 \\
 &\ + \{\textrm{proportion of kango}\} \cdot -0.126 \\
 &\ + \{\textrm{proportion of wago}\} \cdot -0.042 \\
 &\ + \{\textrm{proportion of verbs}\} \cdot -0.145 \\
