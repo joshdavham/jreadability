@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="logo.svg" height="75">
+    <img src="https://raw.githubusercontent.com/joshdavham/jreadability/0bb50f9ea65b2092dd3fdf2f2193d51cb394fe4d/logo.svg" height="75">
 </div>
 <br />
 
@@ -51,16 +51,14 @@ Note that this readability calculator is specifically for <u>non-native speakers
 
 ### Equation
 
-$$
-\begin{align*}
-\textrm{readability}~= &\ (\textrm{mean number of words per sentence}) \cdot -0.056 \\
-&\ + (\textrm{proportion of kango}) \cdot -0.126 \\
-&\ + (\textrm{proportion of wago}) \cdot -0.042 \\
-&\ + (\textrm{proportion of verbs}) \cdot -0.145 \\
-&\ + (\textrm{proportion of auxiliary verbs}) \cdot -0.044 \\
-&\ + 11.724
-\end{align*}
-$$
+```
+readability = {mean number of words per sentence} * -0.056
+            + {proportion of kango} * -0.126
+            + {proportion of wago} * -0.042
+            + {proportion of verbs} * -0.145
+            + {proportion of auxiliary verbs} * -0.044
+            + 11.724
+```
 
 *\* "kango" (漢語) means Japanese word of Chinese origin while "wago" (和語) means native Japanese word.*
 
