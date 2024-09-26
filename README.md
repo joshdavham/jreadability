@@ -1,0 +1,1 @@
+Readability calculator for Japanese.
