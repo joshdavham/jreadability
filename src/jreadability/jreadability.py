@@ -5,23 +5,25 @@ This module defines the `compute_readability` function.
 There are no other public functions, classes or variables.
 """
 
-import fugashi
-from typing import List
+from fugashi import Tagger
+from typing import List, Optional
 from fugashi.fugashi import UnidicNode
 
-def compute_readability(text: str) -> float:
+def compute_readability(text: str, tagger: Optional[Tagger]=None) -> float:
     """
     Computes the readability of a Japanese text.
 
     Args:
         text (str): The text to be scored.
+        tagger (Optional[Tagger]): The fugashi parser used to parse the text. 
 
     Returns:
         float: A float representing the readability score of the text.
     """
 
-    # initialize mecab parser
-    tagger = fugashi.Tagger()
+    if tagger is None:
+        # initialize mecab parser
+        tagger = Tagger()
 
     doc = tagger(text)
 

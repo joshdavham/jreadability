@@ -49,7 +49,7 @@ print(score) # 5.596333333333334
 
 Note that this readability calculator is specifically for <u>non-native speakers</u> learning to read Japanese. This is not to be confused with something like grade level or other readability scores meant for native speakers.
 
-### Equation
+### Model
 
 ```
 readability = {mean number of words per sentence} * -0.056
@@ -62,8 +62,24 @@ readability = {mean number of words per sentence} * -0.056
 
 *\* "kango" (漢語) means Japanese word of Chinese origin while "wago" (和語) means native Japanese word.*
 
----
-
 #### Note on model consistency
 
 The readability scores produced by this python package tend to differ slightly from the scores produced on the official [jreadability website](https://jreadability.net/sys/en). This is likely due to the version difference in UniDic between these two implementations as this package uses UniDic 2.1.2 while theirs uses UniDic 2.2.0. This issue will hopefully be resolved in the future.
+
+## Batch processing
+
+jreadability makes use of [fugashi](https://github.com/polm/fugashi)'s tagger under the hood and initializes a new tagger everytime `compute_retrievability` is invoked. If you are processing a large number of texts, it is recommended to initialize the tagger first on your own, then pass it as an argument to each subsequent `compute_retrievability` call.
+
+```python
+from fugashi import Tagger
+
+texts = [...]
+
+tagger = Tagger()
+
+for text in texts:
+    
+    score = compute_readability(text, tagger) # fast :D
+    #score = compute_readability(text) # slow :'(
+    ...
+```
