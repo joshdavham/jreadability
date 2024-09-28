@@ -83,3 +83,9 @@ for text in texts:
     #score = compute_readability(text) # slow :'(
     ...
 ```
+
+## Other implementations
+
+The official jReadability implementation can be found on [jreadability.net](https://jreadability.net/)
+
+A node.js implementation can also be found [here](https://github.com/Bennycopter/jreadability).
