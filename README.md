@@ -16,7 +16,7 @@
 
 <br />
 
-jreadability allows python developers to calculate the readability of Japanese text using the model developed by Jae-ho Lee and Yoichiro Hasebe in "[Readability measurement of Japanese texts based on levelled corpora](https://researchmap.jp/jhlee/published_papers/21426109)." **Note that this is not an official implementation.**
+jReadability allows python developers to calculate the readability of Japanese text using the model developed by Jae-ho Lee and Yoichiro Hasebe in "[Introducing a readability evaluation system for Japanese language education](https://jreadability.net/file/hasebe-lee-2015-castelj.pdf)." **Note that this is not an official implementation.**
 
 
 ## Installation
@@ -33,7 +33,7 @@ text = 'おはようございます！今日は天気がいいですね。'
 
 score = compute_readability(text)
 
-print(score) # 5.596333333333334
+print(score) # 6.438000000000001
 ```
 
 ## Readability scores
@@ -56,7 +56,7 @@ readability = {mean number of words per sentence} * -0.056
             + {proportion of kango} * -0.126
             + {proportion of wago} * -0.042
             + {proportion of verbs} * -0.145
-            + {proportion of auxiliary verbs} * -0.044
+            + {proportion of particles} * -0.044
             + 11.724
 ```
 
@@ -64,7 +64,7 @@ readability = {mean number of words per sentence} * -0.056
 
 #### Note on model consistency
 
-The readability scores produced by this python package tend to differ slightly from the scores produced on the official [jreadability website](https://jreadability.net/sys/en). This is likely due to the version difference in UniDic between these two implementations as this package uses UniDic 2.1.2 while theirs uses UniDic 2.2.0. This issue will hopefully be resolved in the future.
+The readability scores produced by this python package tend to differ slightly from the scores produced on the official [jreadability website](https://jreadability.net/sys/en). This is likely due to the version difference in UniDic between these two implementations as this package uses UniDic 2.1.2 while theirs uses UniDic 2.2.0. This issue may be resolved in the future.
 
 ## Batch processing
 
@@ -83,3 +83,9 @@ for text in texts:
     #score = compute_readability(text) # slow :'(
     ...
 ```
+
+## Other implementations
+
+The official jReadability implementation can be found on [jreadability.net](https://jreadability.net/)
+
+A node.js implementation can also be found [here](https://github.com/Bennycopter/jreadability).

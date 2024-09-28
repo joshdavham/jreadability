@@ -71,19 +71,17 @@ class Test_jreadability:
 
         assert 3.5 <= score < 4.5
 
-    # test currently failing (score=4.19)
-    #def test_upper_elementary(self):
-    #
-    #    score = compute_readability(upper_elementary_text)
-    #
-    #    assert 4.5 <= score < 5.5
+    def test_upper_elementary(self):
+    
+        score = compute_readability(upper_elementary_text)
+    
+        assert 4.5 <= score < 5.5
 
-    # test currently failing (score=5.12)
-    #def test_lower_elementary(self):
-    #    
-    #    score = compute_readability(lower_elementary_text)
-    #
-    #    assert 5.5 <= score < 6.5
+    def test_lower_elementary(self):
+        
+        score = compute_readability(lower_elementary_text)
+    
+        assert 5.5 <= score < 6.5
 
     def test_batch(self):
 
