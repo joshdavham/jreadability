@@ -68,7 +68,7 @@ The readability scores produced by this python package tend to differ slightly f
 
 ## Batch processing
 
-jreadability makes use of [fugashi](https://github.com/polm/fugashi)'s tagger under the hood and initializes a new tagger everytime `compute_retrievability` is invoked. If you are processing a large number of texts, it is recommended to initialize the tagger first on your own, then pass it as an argument to each subsequent `compute_retrievability` call.
+jreadability makes use of [fugashi](https://github.com/polm/fugashi)'s tagger under the hood and initializes a new tagger everytime `compute_readability` is invoked. If you are processing a large number of texts, it is recommended to initialize the tagger first on your own, then pass it as an argument to each subsequent `compute_readability` call.
 
 ```python
 from fugashi import Tagger
