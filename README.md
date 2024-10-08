@@ -16,7 +16,7 @@
 
 <br />
 
-jReadability allows python developers to calculate the readability of Japanese text using the model developed by Jae-ho Lee and Yoichiro Hasebe in "[Introducing a readability evaluation system for Japanese language education](https://jreadability.net/file/hasebe-lee-2015-castelj.pdf)." **Note that this is not an official implementation.**
+jReadability allows python developers to calculate the readability of Japanese text using the model developed by Jae-ho Lee and Yoichiro Hasebe in [Introducing a readability evaluation system for Japanese language education](https://jreadability.net/file/hasebe-lee-2015-castelj.pdf) and [Readability measurement of Japanese texts based on levelled corpora](https://researchmap.jp/jhlee/published_papers/21426109). **Note that this is not an official implementation.**
 
 
 ## Installation
