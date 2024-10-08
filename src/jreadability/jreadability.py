@@ -58,7 +58,7 @@ def compute_readability(text: str, tagger: Optional[Tagger]=None) -> float:
     
     mean_length_of_sentence = sum(sentence_lengths) / len(sentences)
 
-    # next, compute proportion of kango, wago, verbs and particles
+    # next, compute percentage of kango, wago, verbs and particles
     num_kango = 0
     num_wago = 0
     num_verbs = 0
@@ -79,16 +79,16 @@ def compute_readability(text: str, tagger: Optional[Tagger]=None) -> float:
         elif pos1 == "助詞": # 'joshi', meaning particles
             num_particles += 1
 
-    proportion_of_kango = 100.0 * num_kango / len(doc)
-    proportion_of_wago = 100.0 * num_wago / len(doc)
-    proportion_of_verbs = 100.0 * num_verbs / len(doc)
-    proportion_of_particles = 100.0 * num_particles / len(doc)
+    percentage_of_kango = 100.0 * num_kango / len(doc)
+    percentage_of_wago = 100.0 * num_wago / len(doc)
+    percentage_of_verbs = 100.0 * num_verbs / len(doc)
+    percentage_of_particles = 100.0 * num_particles / len(doc)
 
     readability_score = mean_length_of_sentence * -0.056 + \
-                        proportion_of_kango * -0.126 + \
-                        proportion_of_wago * -0.042 + \
-                        proportion_of_verbs * -0.145 + \
-                        proportion_of_particles * -0.044 + \
+                        percentage_of_kango * -0.126 + \
+                        percentage_of_wago * -0.042 + \
+                        percentage_of_verbs * -0.145 + \
+                        percentage_of_particles * -0.044 + \
                         11.724
 
     return readability_score

@@ -53,10 +53,10 @@ Note that this readability calculator is specifically for <u>non-native speakers
 
 ```
 readability = {mean number of words per sentence} * -0.056
-            + {proportion of kango} * -0.126
-            + {proportion of wago} * -0.042
-            + {proportion of verbs} * -0.145
-            + {proportion of particles} * -0.044
+            + {percentage of kango} * -0.126
+            + {percentage of wago} * -0.042
+            + {percentage of verbs} * -0.145
+            + {percentage of particles} * -0.044
             + 11.724
 ```
 
