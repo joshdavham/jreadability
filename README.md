@@ -40,12 +40,12 @@ print(score) # 6.438000000000001
 
 | Level              | Readability score range |
 |--------------------|-------------------------|
-| Upper-advanced     | 0.5-1.4                 |
-| Lower-advanced     | 1.5 - 2.4               |
-| Upper-intermediate | 2.5 - 3.4               |
-| Lower-intermediate | 3.5 - 4.4               |
-| Upper-elementary   | 4.5 - 5.4               |
-| Lower-elementary   | 5.5 - 6.4               |
+| Upper-advanced     | [0.5, 1.5)                 |
+| Lower-advanced     | [1.5, 2.5)               |
+| Upper-intermediate | [2.5, 3.5)               |
+| Lower-intermediate | [3.5, 4.5)               |
+| Upper-elementary   | [4.5, 5.5)               |
+| Lower-elementary   | [5.5, 6.5)               |
 
 Note that this readability calculator is specifically for <u>non-native speakers</u> learning to read Japanese. This is not to be confused with something like grade level or other readability scores meant for native speakers.
 
