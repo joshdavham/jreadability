@@ -20,7 +20,7 @@ jReadability allows python developers to calculate the readability of Japanese t
 
 ## Demo
 
-You can play with an interactive demo [here](https://jreadability-demo-514557297503.us-central1.run.app/).
+You can play with an interactive demo [here](https://jreadability-demo.streamlit.app/).
 
 ## Installation
 ```
