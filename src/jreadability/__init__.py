@@ -8,3 +8,5 @@ This package is an unofficial python implementation of the readability model dev
 """
 
 from .jreadability import compute_readability
+
+__all__ = ["compute_readability"]
