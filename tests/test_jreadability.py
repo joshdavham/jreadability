@@ -45,56 +45,53 @@ lower_elementary_text = """李さんは毎日お酒をのんでいます。お�
     ポケットの中に千円札を出しました。机の上におきました。
     「よろしい。」"""
 
+
 class Test_jreadability:
-
     def test_upper_advanced(self):
-
         score = compute_readability(upper_advanced_text)
 
         assert 0.5 <= score < 1.5
 
     def test_lower_advanced(self):
-
         score = compute_readability(lower_advanced_text)
 
         assert 1.5 <= score < 2.5
 
     def test_upper_intermediate(self):
-
         score = compute_readability(upper_intermediate_text)
 
         assert 2.5 <= score < 3.5
 
     def test_lower_intermediate(self):
-
         score = compute_readability(lower_intermediate_text)
 
         assert 3.5 <= score < 4.5
 
     def test_upper_elementary(self):
-    
         score = compute_readability(upper_elementary_text)
-    
+
         assert 4.5 <= score < 5.5
 
     def test_lower_elementary(self):
-        
         score = compute_readability(lower_elementary_text)
-    
+
         assert 5.5 <= score < 6.5
 
     def test_batch(self):
-
         # list of 600 japanese strings
-        test_texts = [lower_elementary_text, upper_elementary_text, 
-                      lower_intermediate_text, upper_intermediate_text, 
-                      lower_advanced_text, upper_advanced_text] * 100
+        test_texts = [
+            lower_elementary_text,
+            upper_elementary_text,
+            lower_intermediate_text,
+            upper_intermediate_text,
+            lower_advanced_text,
+            upper_advanced_text,
+        ] * 100
 
         # time to compute without passing initialized tagger
         start_time = time.time()
         scores_1 = []
         for text in test_texts:
-
             score = compute_readability(text)
             scores_1.append(score)
 
@@ -105,12 +102,13 @@ class Test_jreadability:
         tagger = Tagger()
         scores_2 = []
         for text in test_texts:
-
             score = compute_readability(text, tagger)
             scores_2.append(score)
 
         initialized_tagger_time = time.time() - start_time
 
-        assert scores_1 == scores_2 # readability scores must be the same
+        assert scores_1 == scores_2  # readability scores must be the same
 
-        assert initialized_tagger_time < uninitialized_tagger_time # initialzing the tagger should save time
+        assert (
+            initialized_tagger_time < uninitialized_tagger_time
+        )  # initialzing the tagger should save time
