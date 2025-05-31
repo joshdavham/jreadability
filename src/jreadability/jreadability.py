@@ -85,13 +85,6 @@ def compute_readability(text: str, tagger: Optional[Tagger] = None) -> float:
     percentage_of_verbs = 100.0 * num_verbs / len(doc)
     percentage_of_particles = 100.0 * num_particles / len(doc)
 
-    readability_score = (
-        mean_length_of_sentence * -0.056
-        + percentage_of_kango * -0.126
-        + percentage_of_wago * -0.042
-        + percentage_of_verbs * -0.145
-        + percentage_of_particles * -0.044
-        + 11.724
-    )
+    readability_score = ( mean_length_of_sentence * -0.056 + percentage_of_kango * -0.126 + percentage_of_wago * -0.042 + percentage_of_verbs * -0.145 + percentage_of_particles * -0.044 + 11.724)
 
     return readability_score
