@@ -12,6 +12,9 @@
 <div align="center" style="text-decoration: none;">
     <a href="https://pypi.org/project/jreadability/"><img src="https://img.shields.io/pypi/v/jreadability"></a>
     <a href="https://github.com/joshdavham/jreadability/blob/main/LICENSE" style="text-decoration: none;"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"></a>
+    <a href="https://codecov.io/gh/joshdavham/jreadability" > 
+    <img src="https://codecov.io/gh/joshdavham/jreadability/branch/main/graph/badge.svg?token=UPOMHPIHD7"/> 
+    </a>
 </div>
 
 <br />
