@@ -22,8 +22,6 @@ def compute_readability(text: str, tagger: Optional[Tagger] = None) -> float:
         float: A float representing the readability score of the text.
     """
 
-    my_useless_var = 10
-
     if tagger is None:
         # initialize mecab parser
         tagger = Tagger()
