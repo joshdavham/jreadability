@@ -18,7 +18,7 @@ jobs:
         with:
           enable-cache: true
       # Fix lint errors
-      - run: uvx ruff check --fix-only .
+      - run: uvx ruff check --fix .
       # Format code
       - run: uvx ruff format .
 
