@@ -8,6 +8,7 @@ There are no other public functions, classes or variables.
 from fugashi import Tagger
 from typing import List, Optional
 from fugashi.fugashi import UnidicNode
+import os
 
 
 def compute_readability(text: str, tagger: Optional[Tagger] = None) -> float:
