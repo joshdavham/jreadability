@@ -1,13 +1,9 @@
 name: website
 
-# build the documentation whenever there are new commits on main
 on:
-  push:
-    branches:
-      - main
-    # Alternative: only build for tags.
-    # tags:
-    #   - '*'
+  release:
+    types: [published]
+  workflow_dispatch: # allows us to manually trigger workflow
 
 # security: restrict permissions for CI jobs.
 permissions:
