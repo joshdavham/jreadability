@@ -12,6 +12,8 @@ permissions:
 jobs:
   # Build the documentation and upload the static HTML files as an artifact.
   build:
+    # the job will run when publishing a non-prerelease release or a manual workflow run
+    if: github.event_name != 'release' || github.event.release.prerelease == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
