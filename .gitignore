@@ -7,3 +7,5 @@ venv
 build/
 *.egg-info/
 dist/
+
+docs/
