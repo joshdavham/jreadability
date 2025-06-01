@@ -90,6 +90,10 @@ for text in texts:
     ...
 ```
 
+## Documentation
+
+You can find this repo's (very minimal) documentation [here](https://joshdavham.github.io/jreadability/jreadability.html).
+
 ## Other implementations
 
 The official jReadability implementation can be found on [jreadability.net](https://jreadability.net/)
