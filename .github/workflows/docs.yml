@@ -30,7 +30,7 @@ jobs:
       - run: pip install pdoc
       # ADJUST THIS: build your documentation into docs/.
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
-      - run: pdoc src/jreadability --logo "https://raw.githubusercontent.com/joshdavham/jreadability/refs/heads/main/logo.svg" --favicon "https://raw.githubusercontent.com/joshdavham/jreadability-demo/refs/heads/main/favicon.svg" -o /docs
+      - run: pdoc src/jreadability --logo "https://raw.githubusercontent.com/joshdavham/jreadability/refs/heads/main/logo.svg" --favicon "https://raw.githubusercontent.com/joshdavham/jreadability-demo/refs/heads/main/favicon.svg" -o docs/
 
       - uses: actions/upload-pages-artifact@v3
         with:
