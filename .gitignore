@@ -9,3 +9,6 @@ build/
 dist/
 
 docs/
+
+.vscode
+.coverage
