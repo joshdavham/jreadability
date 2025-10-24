@@ -17,10 +17,10 @@ classifiers = [
 keywords=['japanese', 'readability']
 urls = { homepage = "https://github.com/joshdavham/jreadability" }
 dependencies = [
-    "fugashi",
+    "fugashi==1.5.2.dev3",
     "unidic-lite"
 ]
-requires-python = ">=3.10,<3.14"
+requires-python = ">=3.10"
 
 [project.optional-dependencies]
 dev = ["setuptools", "pytest", "pytest-cov", "ruff"]
