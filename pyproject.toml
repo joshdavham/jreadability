@@ -17,7 +17,7 @@ classifiers = [
 keywords=['japanese', 'readability']
 urls = { homepage = "https://github.com/joshdavham/jreadability" }
 dependencies = [
-    "fugashi==1.5.2.dev3",
+    "fugashi",
     "unidic-lite"
 ]
 requires-python = ">=3.10"
