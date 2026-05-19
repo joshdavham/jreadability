@@ -6,8 +6,8 @@ There are no other public functions, classes or variables.
 """
 
 from fugashi import Tagger
-from typing import List, Optional
-from fugashi.fugashi import UnidicNode
+from typing import Optional
+import re
 
 
 def compute_readability(text: str, tagger: Optional[Tagger] = None) -> float:
@@ -21,35 +21,43 @@ def compute_readability(text: str, tagger: Optional[Tagger] = None) -> float:
     Returns:
         float: A float representing the readability score of the text.
     """
-
     if tagger is None:
         # initialize mecab parser
         tagger = Tagger()
 
     doc = tagger(text)
 
-    def split_japanese_sentences(doc: List[UnidicNode]) -> List[List[UnidicNode]]:
+    # Remove full-width spaces, standard spaces, and empty tokens
+    doc = [t for t in doc if t.surface.strip() and t.surface not in ("　")]
+
+    def split_japanese_sentences(text, tagger):
         """
         Helper function that breaks the parsed text into lists of sentences.
         """
-
+        text = text.replace("\r\n", "\n").replace("\r", "\n")
+        paragraphs = re.split(r"\n\s*\n+", text)
         sentences = []
-        current_sentence = []
-        for token in doc:
-            current_sentence.append(token)
 
-            if token.surface in ("。", "？", "！", "．"):
+        for paragraph in paragraphs:
+            current_sentence = []
+            doc = tagger(paragraph)
+            doc = [t for t in doc if t.surface.strip() and t.surface not in ("　")]
+
+            for token in doc:
+                current_sentence.append(token)
+
+                if token.surface in ("。", "？", "！", "．"):
+                    sentences.append(current_sentence)
+                    current_sentence = []
+
+            # if there's any leftover sentence that doesn't end with sentence-ending punctuation
+            if current_sentence:
                 sentences.append(current_sentence)
-                current_sentence = []
-
-        # if there's any leftover sentence that doesn't end with sentence-ending punctuation
-        if current_sentence:
-            sentences.append(current_sentence)
 
         return sentences
 
     # first, compute mean sentence length (in words, not characters)
-    sentences = split_japanese_sentences(doc)
+    sentences = split_japanese_sentences(text, tagger)
 
     sentence_lengths = []
     for sentence_doc in sentences:
